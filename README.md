@@ -8,6 +8,10 @@ Grafana를 이용하여 Prometheus, Loki Dashboard를 생성해 수집한 데이
 뿐만 아니라 Application에서 중요도가 높은 Error Log, 또는 JVM의 특이사항(GC FULL)등의 발생 시 Slack Alert 설정하여
 Application의 이슈가 발생하였을 때 Alert 기능을 이용하여 이슈 상황에 대비할 수 있도록 모나토랑 오픈소스를 이용하여 구현함.
 
+## Diagram
+
+![prometheus_loki_promtail.jpg](https://github.com/im-happy-coder/Springboot-OpenSource-Monitoring/blob/main/img/prometheus_loki_promtail.jpg?raw=true)
+
 ## Skils
 
 Spring v4.3.7
@@ -67,19 +71,19 @@ http://192.168.202.11:8080/main
 - http://localhost:8080/main
 - Pinpoint Application 모니터링
 
-![pinpoint-1](img/pinpoint-1.jpg)
+![pinpoint-1](https://github.com/im-happy-coder/Springboot-OpenSource-Monitoring/blob/main/img/pinpoint-1.jpg?raw=true)
 
 - 트랜잭션 정보
   
-![pinpoint-2](img/pinpoint-2.jpg)
+![pinpoint-2](https://github.com/im-happy-coder/Springboot-OpenSource-Monitoring/blob/main/img/pinpoint-2.jpg?raw=true)
 
 - JVM 모니터링
   
-![pinpoint-3](img/pinpoint-3.jpg)
+![pinpoint-3](https://github.com/im-happy-coder/Springboot-OpenSource-Monitoring/blob/main/img/pinpoint-3.jpg?raw=true)
 
 - Server 자원 모니터링 
   
-![pinpoint-4](img/pinpoint-4.jpg)
+![pinpoint-4](https://github.com/im-happy-coder/Springboot-OpenSource-Monitoring/blob/main/img/pinpoint-4.jpg?raw=true)
 
 ### Prometheus 설치
 
@@ -100,7 +104,7 @@ scrape_configs:
 
 - prometheus config 설정 확인
   
-![prometheus-config-1](img/prometheus-config-1.jpg)
+![prometheus-config-1](https://github.com/im-happy-coder/Springboot-OpenSource-Monitoring/blob/main/img/prometheus-config-1.jpg?raw=true)
 
 ### Prometheus Spring Application 설정
 
@@ -123,12 +127,12 @@ scrape_configs:
 - Spring Application 실행 후 Prometheus 연동 확인
   - http://192.168.202.11:9090/targets
 
-![prometheus-target-1.jpg](img/prometheus-target-1.jpg)
+![prometheus-target-1.jpg](https://github.com/im-happy-coder/Springboot-OpenSource-Monitoring/blob/main/img/prometheus-target-1.jpg?raw=true)
 
 - Application에서 Prometheus value 확인
   - http://192.168.202.222:9595/prometheus
 
-![spring-prometheus-1.jpg](img/spring-prometheus-1.jpg)
+![spring-prometheus-1.jpg](https://github.com/im-happy-coder/Springboot-OpenSource-Monitoring/blob/main/img/spring-prometheus-1.jpg?raw=true)
 
 - springboot 1.4.5 버전에서 prometheus url에 logfile endpoint 추가
   - application.yml 파일 수정
@@ -141,7 +145,6 @@ endpoints:
 
 - 아래 url로 접속하면 Spring Application 로그 확인
   - http://localhost:9595/logfile
-
 
 ## Grafana, Loki, Promtail 설치
 
@@ -160,6 +163,7 @@ endpoints:
 
 - Loki yaml 수정
   - loki-local-config.yaml
+
 ``` yaml
 auth_enabled: false
 
@@ -293,27 +297,28 @@ logging:
 
 - Grafana Datasource 추가
 
-![grafana-datasource-1](img/grafana-datasource-1.JPG)
+![grafana-datasource-1](https://github.com/im-happy-coder/Springboot-OpenSource-Monitoring/blob/main/img/grafana-datasource-1.JPG?raw=true)
 
 - Grafana Prometheus Dashboard 추가
   - Prometheus로 수집한 Spring Application data 추가
   - Loki를 이용한 Application Log Dashboard 추가
 
-![grafana-dashboard-2](img/grafana-dashboard-2.jpg)
+![grafana-dashboard-2](https://github.com/im-happy-coder/Springboot-OpenSource-Monitoring/blob/main/img/grafana-dashboard-2.jpg?raw=true)
 
-![grafana-dashboard-3](img/grafana-dashboard-3.jpg)
+![grafana-dashboard-3](https://github.com/im-happy-coder/Springboot-OpenSource-Monitoring/blob/main/img/grafana-dashboard-3.jpg?raw=true)
 
-![grafana-dashboard-1](img/grafana-dashboard-1.jpg)
+![grafana-dashboard-1](https://github.com/im-happy-coder/Springboot-OpenSource-Monitoring/blob/main/img/grafana-dashboard-1.jpg?raw=true)
 
 ### Grafana Loki Slack Alert 설정
 
 - Alert Rule 추가
   
-![grafana-alert-2](img/grafana-alert-2.jpg)
+![grafana-alert-2](https://github.com/im-happy-coder/Springboot-OpenSource-Monitoring/blob/main/img/grafana-alert-2.jpg?raw=true)
 
 - Slack 확인
   
-![grafana-alert-1](img/grafana-alert-1.jpg)
+![grafana-alert-1](https://github.com/im-happy-coder/Springboot-OpenSource-Monitoring/blob/main/img/grafana-alert-1.jpg?raw=true
+)
 ## Referer
 
 > pinpoint docker</br>
